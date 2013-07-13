@@ -37,11 +37,11 @@ public class WikiTextParser {
     private boolean redirect = false;
     private String redirectString = null;
     private static Pattern redirectPattern =
-            Pattern.compile("#REDIRECT\\s+\\[\\[(.*?)\\]\\]");
+            Pattern.compile("#REDIRECT\\s+\\[\\[(.*?)\\]\\]", Pattern.CASE_INSENSITIVE);
     private boolean stub = false;
     private boolean disambiguation = false;
-    private static Pattern stubPattern = Pattern.compile("\\-stub\\}\\}");
-    private static Pattern disambCatPattern = Pattern.compile("\\{\\{disambig\\}\\}");
+    private static Pattern stubPattern = Pattern.compile("\\-stub\\}\\}", Pattern.CASE_INSENSITIVE);
+    private static Pattern disambCatPattern = Pattern.compile("\\{\\{disambig\\}\\}", Pattern.CASE_INSENSITIVE);
     private InfoBox infoBox = null;
 
     public WikiTextParser(String wtext) {
